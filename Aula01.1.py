@@ -1,3 +1,4 @@
+# label interativo
 from tkinter import *
 
 
