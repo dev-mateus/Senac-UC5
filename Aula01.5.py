@@ -4,7 +4,7 @@ from tkinter import *
 root = Tk()
 
 fr1 = Frame(root)
-fr2 = Frame(root)
+fr2 = Frame(root, background='blue')
 
 lb1 = Label(fr1)
 en1 = Entry(fr1)
@@ -20,7 +20,7 @@ bt8 = Button(fr2, text='8')
 bt9 = Button(fr2, text='9')
 
 fr1.pack()
-fr2.pack()
+fr2.pack(fill='both', expand=1)
 
 lb1.pack()
 en1.pack()
@@ -35,4 +35,14 @@ bt7.grid(row=2, column=0)
 bt8.grid(row=2, column=1)
 bt9.grid(row=2, column=2)
 
+'''
+bt1.pack(side='left', fill='both', expand=1)
+bt2.pack(side='left', fill='both', expand=1)
+bt3.pack(side='left', fill='both', expand=1)'''
+'''bt4
+bt5
+bt6
+bt7
+bt8
+bt9'''
 root.mainloop()
