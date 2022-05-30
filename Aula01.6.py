@@ -2,9 +2,8 @@
 from tkinter import *
 from tkinter.filedialog import *
 
+
 # back-end
-
-
 def salvar():
     asksaveasfilename(
         defaultextension=".txt",
@@ -21,6 +20,7 @@ def abrir():
         txt.insert(END, text)
 
 
+# front-end
 root = Tk()
 root.geometry('600x600')
 root.minsize(width=300, height=300)
