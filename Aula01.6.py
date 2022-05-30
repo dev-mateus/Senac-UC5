@@ -5,10 +5,13 @@ from tkinter.filedialog import *
 
 # back-end
 def salvar():
-    asksaveasfilename(
+    arquivo = asksaveasfilename(
         defaultextension='.txt',
         filetypes=[('Arquivos de texto', '*.txt'), ('Todos Arquivos', '*.*')]
     )
+    with open(arquivo, "w") as output_file:
+        text = txt.get(1.0, END)
+        output_file.write(text)
 
 
 def abrir():
