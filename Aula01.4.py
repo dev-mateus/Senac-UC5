@@ -43,7 +43,7 @@ janela.geometry('400x140')
 janela.title('CalcPy')
 
 # widgets
-fr1 = Frame(janela)
+fr1 = Frame(janela, bg='black')
 etr1 = Entry(janela)
 etr2 = Entry(janela)
 bt1 = Button(fr1, text='+', command=soma, width=2)
