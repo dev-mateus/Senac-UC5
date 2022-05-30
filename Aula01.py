@@ -19,6 +19,8 @@ def click(msg):
 root = Tk()
 root.title('App GUI')
 root.geometry('200x130')
+# root['bg'] = 'black'
+# root.config(background='black')
 
 # 2) FRAME
 
