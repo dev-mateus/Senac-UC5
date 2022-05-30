@@ -42,33 +42,25 @@ janela = Tk()
 janela.geometry('400x140')
 janela.title('CalcPy')
 
-# caixa de entrada
+# widgets
+fr1 = Frame(janela)
 etr1 = Entry(janela)
-etr1.place(x=100, y=50, width=200)
-
 etr2 = Entry(janela)
-etr2.place(x=100, y=75, width=200)
-
-# botões
-bt1 = Button(janela, text='+')
-bt1.place(x=100, y=20, width=50)
-bt1['command'] = soma
-
-bt2 = Button(janela, text='-')
-bt2.place(x=150, y=20, width=50)
-bt2['command'] = subtracao
-
-bt3 = Button(janela, text='*')
-bt3.place(x=200, y=20, width=50)
-bt3['command'] = multiplicacao
-
-bt4 = Button(janela, text='/')
-bt4.place(x=250, y=20, width=50)
-bt4['command'] = divisao
-
-# label
+bt1 = Button(fr1, text='+', command=soma, width=2)
+bt2 = Button(fr1, text='-', command=subtracao, width=2)
+bt3 = Button(fr1, text='*', command=multiplicacao, width=2)
+bt4 = Button(fr1, text='/', command=divisao, width=2)
 lb1 = Label(janela, text='Resultado!')
-lb1.place(x=100, y=100, width=200)
+
+# layout
+bt1.pack(side=LEFT)
+bt2.pack(side=LEFT)
+bt3.pack(side=LEFT)
+bt4.pack(side=LEFT)
+etr1.pack()
+etr2.pack()
+fr1.pack()
+lb1.pack()
 
 # execução da instancia
 janela.mainloop()
