@@ -6,16 +6,16 @@ from tkinter.filedialog import *
 # back-end
 def salvar():
     asksaveasfilename(
-        defaultextension=".txt",
-        filetypes=[("Arquivos de texto", "*.txt"), ("Todos Arquivos", "*.*")],
+        defaultextension='.txt',
+        filetypes=[('Arquivos de texto', '*.txt'), ('Todos Arquivos', '*.*')]
     )
 
 
 def abrir():
     arquivo = askopenfilename(
-        filetypes=[("Arquivos de texto", "*.txt"), ("Todos Arquivos", "*.*")]
+        filetypes=[('Arquivos de texto', '*.txt'), ('Todos Arquivos', '*.*')]
     )
-    with open(arquivo, "r") as input_file:
+    with open(arquivo, 'r') as input_file:
         text = input_file.read()
         txt.insert(END, text)
 
