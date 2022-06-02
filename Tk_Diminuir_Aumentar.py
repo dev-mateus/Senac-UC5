@@ -1,5 +1,4 @@
 # label interativo
-import keyword
 from tkinter import *
 
 
@@ -28,6 +27,8 @@ root.grid_columnconfigure(1, weight=1)
 root.grid_columnconfigure(2, weight=1)
 root.bind('-', lambda event: diminuir())
 root.bind('+', lambda event: aumentar())
+# o botão Esc do teclado chama a função quit
+root.bind('<Escape>', lambda event: quit())
 
 # widgets
 lb1 = Label(root, text='0', padx=20, pady=10, width=3)
