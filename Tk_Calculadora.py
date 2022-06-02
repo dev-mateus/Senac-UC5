@@ -1,12 +1,18 @@
 from tkinter import *
 
+var = 1
+
+
 
 def resultado(valor):
     lb1['text'] += valor
 
 
+
 def saida():
-    lb1['text'] = eval(lb1['text'])
+    if lb1['text'][len(lb1['text'])-1] != '+':
+        resultado = eval(lb1['text'])
+        lb1['text'] = str(resultado)
 
 
 def limpa():
