@@ -37,6 +37,7 @@ def clear():
     lb3['text'] = 'Resultado'
     lb4['text'] = ''
 
+
 root = Tk()
 # o botão enter do teclado chama a função imc
 root.bind('<Return>', lambda event: imc())
