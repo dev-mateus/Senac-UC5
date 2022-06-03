@@ -4,7 +4,9 @@ from tkinter import *
 def entrada(valor):
     if lb1['text'] == 'Conta Invalida':
         lb1['text'] = ''
+        lb1['fg'] = '#a07000'
     else:
+        lb1['fg'] = '#a07000'
         lb1['text'] += valor
 
 
@@ -13,8 +15,10 @@ def saida():
     if ultimo_digito != '+' and ultimo_digito != '-' and ultimo_digito != '*' and ultimo_digito != '/':
         res = eval(lb1['text'])
         lb1['text'] = str(res)
+        lb1['fg'] = '#27990d'
     else:
         lb1['text'] = 'Conta Invalida'
+        lb1['fg'] = '#aa0303'
 
 
 def limpa():
@@ -39,7 +43,7 @@ janela.grid_columnconfigure(2, weight=1, minsize=50)
 janela.grid_columnconfigure(3, weight=1, minsize=50)
 
 # widgets
-lb1 = Label(janela, font='Verdana 26')
+lb1 = Label(janela, font='Verdana 30', bg='#414249', fg='#a07000')
 bt7 = Button(janela, text='7', width=2, height=1, font='Verdana 26', command=lambda: entrada('7'))
 bt8 = Button(janela, text='8', width=2, height=1, font='Verdana 26', command=lambda: entrada('8'))
 bt9 = Button(janela, text='9', width=2, height=1, font='Verdana 26', command=lambda: entrada('9'))
@@ -58,7 +62,7 @@ bt14 = Button(janela, text='-', width=2, height=1, font='Verdana 26', command=la
 bt15 = Button(janela, text='.', width=2, height=1, font='Verdana 26', command=lambda: entrada('.'))
 
 # layout
-lb1.grid(row=0, column=0, columnspan=5, sticky=EW)
+lb1.grid(row=0, column=0, columnspan=5, sticky=NSEW)
 bt7.grid(row=1, column=0, sticky=NSEW)
 bt8.grid(row=1, column=1, sticky=NSEW)
 bt9.grid(row=1, column=2, sticky=NSEW)
