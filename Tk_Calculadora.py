@@ -11,9 +11,19 @@ def entrada(valor):
 
 
 def saida():
+    controle = 1
+    ent = lb1['text']
+    # preparando a entrada para realizar as verificações
+    mod_ent = ent.replace('+', '|').replace('-', '|').replace('*', '|').replace('/', '|').replace('(', '|').replace(')', '|')
+    mod_ent = mod_ent.split('|')
+
+    for i in range(len(mod_ent)):
+        if not mod_ent[i].replace('', '0').replace('.', '1', 1).isnumeric():
+            controle = 0
+
     ultimo_digito = lb1['text'][len(lb1['text']) - 1]
-    if ultimo_digito != '+' and ultimo_digito != '-' and ultimo_digito != '*' and ultimo_digito != '/' and ultimo_digito != '.':
-        res = eval(lb1['text'])
+    if ultimo_digito != '+' and ultimo_digito != '-' and ultimo_digito != '*' and ultimo_digito != '/' and ultimo_digito != '.' and controle != 0:
+        res = round(eval(lb1['text']), 10)
         lb1['text'] = str(res)
         lb1['fg'] = '#27990d'
     else:
