@@ -23,9 +23,15 @@ def saida():
 
     ultimo_digito = lb1['text'][len(lb1['text']) - 1]
     if ultimo_digito != '+' and ultimo_digito != '-' and ultimo_digito != '*' and ultimo_digito != '/' and ultimo_digito != '.' and controle != 0:
-        res = round(eval(lb1['text']), 10)
-        lb1['text'] = str(res)
-        lb1['fg'] = '#27990d'
+        try:
+            res = round(eval(lb1['text']), 10)
+            lb1['text'] = str(res)
+            lb1['fg'] = '#27990d'
+        # trata somente a divisão por zero, os outros erros são verificados no if
+        except ZeroDivisionError:
+            lb1['text'] = 'Conta Invalida'
+            lb1['fg'] = '#aa0303'
+
     else:
         lb1['text'] = 'Conta Invalida'
         lb1['fg'] = '#aa0303'
@@ -33,6 +39,7 @@ def saida():
 
 def limpa():
     lb1['text'] = ''
+
 
 def limpa_ultimo():
     lb1['text'] = lb1['text'][:-1]
@@ -44,23 +51,23 @@ janela.geometry('400x500')
 janela.bind('<Escape>', lambda event: limpa())
 janela.bind('=', lambda event: saida())
 janela.bind('<BackSpace>', lambda event: limpa_ultimo())
-janela.bind('0', lambda event:entrada('0') )
-janela.bind('1', lambda event:entrada('1') )
-janela.bind('2', lambda event:entrada('2') )
-janela.bind('3', lambda event:entrada('3') )
-janela.bind('4', lambda event:entrada('4') )
-janela.bind('5', lambda event:entrada('5') )
-janela.bind('6', lambda event:entrada('6') )
-janela.bind('7', lambda event:entrada('7') )
-janela.bind('8', lambda event:entrada('8') )
-janela.bind('9', lambda event:entrada('9') )
-janela.bind('+', lambda event:entrada('+') )
-janela.bind('-', lambda event:entrada('-') )
-janela.bind('/', lambda event:entrada('/') )
-janela.bind('*', lambda event:entrada('*') )
-janela.bind('.', lambda event:entrada('.') )
-janela.bind(')', lambda event:entrada(')') )
-janela.bind('(', lambda event:entrada('(') )
+janela.bind('0', lambda event: entrada('0'))
+janela.bind('1', lambda event: entrada('1'))
+janela.bind('2', lambda event: entrada('2'))
+janela.bind('3', lambda event: entrada('3'))
+janela.bind('4', lambda event: entrada('4'))
+janela.bind('5', lambda event: entrada('5'))
+janela.bind('6', lambda event: entrada('6'))
+janela.bind('7', lambda event: entrada('7'))
+janela.bind('8', lambda event: entrada('8'))
+janela.bind('9', lambda event: entrada('9'))
+janela.bind('+', lambda event: entrada('+'))
+janela.bind('-', lambda event: entrada('-'))
+janela.bind('/', lambda event: entrada('/'))
+janela.bind('*', lambda event: entrada('*'))
+janela.bind('.', lambda event: entrada('.'))
+janela.bind(')', lambda event: entrada(')'))
+janela.bind('(', lambda event: entrada('('))
 
 janela.grid_rowconfigure(0, weight=1, minsize=50)
 janela.grid_rowconfigure(1, weight=1, minsize=50)
@@ -109,7 +116,6 @@ bt2.grid(row=3, column=1, sticky=NSEW)
 bt3.grid(row=3, column=2, sticky=NSEW)
 bt0.grid(row=4, column=0, sticky=NSEW)
 bt10.grid(row=4, column=1, sticky=NSEW)
-
 
 bt11.grid(row=1, column=3, sticky=NSEW)
 bt12.grid(row=2, column=3, sticky=NSEW)
