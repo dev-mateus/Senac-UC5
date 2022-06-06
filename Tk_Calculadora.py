@@ -5,6 +5,7 @@ def entrada(valor):
     if lb1['text'] == 'Conta Invalida':
         lb1['text'] = ''
         lb1['fg'] = '#a07000'
+        lb1['text'] += valor
     else:
         lb1['fg'] = '#a07000'
         lb1['text'] += valor
