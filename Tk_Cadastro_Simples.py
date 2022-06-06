@@ -1,5 +1,6 @@
 from tkinter import *
 root = Tk()
+root.config(bg='blue')
 
 fr1 = Frame(root)
 fr2 = Frame(root)
