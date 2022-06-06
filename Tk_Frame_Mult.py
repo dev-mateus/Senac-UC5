@@ -8,14 +8,14 @@ fr0 = Frame(root)
 fr1 = Frame(root, bg='black')
 fr2 = Frame(root, bg='red')
 
-lb1_fr1 = Label(fr1, text='Texto no frame 1')
-bt1_fr1 = Button(fr1, text='Voltar', command=lambda: [fr0.pack(), fr1.pack_forget()])
+lb1_fr1 = Label(fr1, text='Texto no frame 1', font='Arial 32')
+bt1_fr1 = Button(fr1, text='Voltar', font='Arial 32', command=lambda: [fr0.pack(), fr1.pack_forget()])
 
-lb1_fr2 = Label(fr2, text='Texto no frame 2')
-bt1_fr2 = Button(fr2, text='Voltar', command=lambda: [fr0.pack(), fr2.pack_forget()])
+lb1_fr2 = Label(fr2, text='Texto no frame 2', font='Arial 32')
+bt1_fr2 = Button(fr2, text='Voltar', font='Arial 32', command=lambda: [fr0.pack(), fr2.pack_forget()])
 
-bt1 = Button(fr0, text='Abrir Frame 1', command=lambda: [fr1.pack(), fr0.pack_forget()])
-bt2 = Button(fr0, text='Abrir Frame 2', command=lambda: [fr2.pack(), fr0.pack_forget()])
+bt1 = Button(fr0, text='Abrir Frame 1', font='Arial 32', command=lambda: [fr1.pack(), fr0.pack_forget()])
+bt2 = Button(fr0, text='Abrir Frame 2', font='Arial 32', command=lambda: [fr2.pack(), fr0.pack_forget()])
 
 # janela principal
 fr0.pack()
