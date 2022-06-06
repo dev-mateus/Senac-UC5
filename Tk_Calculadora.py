@@ -22,16 +22,16 @@ def saida():
         if not mod_ent[i].replace('', '0').replace('.', '1', 1).isnumeric():
             controle = 0
 
-    ultimo_digito = lb1['text'][len(lb1['text']) - 1]
-    if ultimo_digito != '+' and ultimo_digito != '-' and ultimo_digito != '*' and ultimo_digito != '/' and ultimo_digito != '.' and controle != 0:
-        try:
-            res = round(eval(lb1['text']), 10)
-            lb1['text'] = str(res)
-            lb1['fg'] = '#27990d'
+    '''ultimo_digito = lb1['text'][len(lb1['text']) - 1]'''
+    if '''ultimo_digito != '+' and ultimo_digito != '-' and ultimo_digito != '*' and ultimo_digito != '/' and ultimo_digito != '.' '''and controle != 0:
+        '''try:'''
+        res = round(eval(lb1['text']), 10)
+        lb1['text'] = str(res)
+        lb1['fg'] = '#27990d'
         # trata somente a divisão por zero, os outros erros são verificados no if
-        except ZeroDivisionError:
-            lb1['text'] = 'Conta Invalida'
-            lb1['fg'] = '#aa0303'
+        '''except ZeroDivisionError:'''
+        '''lb1['text'] = 'Conta Invalida'
+        lb1['fg'] = '#aa0303'''
 
     else:
         lb1['text'] = 'Conta Invalida'
