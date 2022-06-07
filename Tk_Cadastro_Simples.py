@@ -3,8 +3,8 @@ root = Tk()
 root.title('cadastro')
 root.config(bg='#8c8a89')
 root.config(pady=10, padx=10)
-fr1 = LabelFrame(root, padx=10, pady=10, bg='#8c8a89', text='Dados Pessoais', font='Verdana 14 italic')
-fr2 = LabelFrame(root, padx=10, pady=10, bg='#8c8a89', text='Endereço', font='Verdana 14 italic')
+fr1 = LabelFrame(root, padx=10, pady=10, bg='#8c8a89', fg='#660000', text='Dados Pessoais', font='Verdana 14 italic')
+fr2 = LabelFrame(root, padx=10, pady=10, bg='#8c8a89', fg='#660000', text='Endereço', font='Verdana 14 italic')
 fr3 = Frame(root, padx=10, pady=10, bg='#8c8a89')
 
 
