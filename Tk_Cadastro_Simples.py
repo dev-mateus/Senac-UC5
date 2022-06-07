@@ -37,8 +37,8 @@ bt1_fr3 = Button(fr3, text='Gravar Dados', font='Verdana 11')
 bt2_fr3 = Button(fr3, text='Listar Dados', font='Verdana 11')
 
 # ########################### layout frames ########################### #
-fr1.pack(fill=BOTH, anchor=W)
-fr2.pack(fill=BOTH, anchor=W)
+fr1.pack(anchor=W)
+fr2.pack(anchor=W)
 fr3.pack(fill=BOTH, anchor=NE)
 
 # ####################### layout widgets frame 1 ####################### #
