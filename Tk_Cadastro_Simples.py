@@ -3,6 +3,7 @@ root = Tk()
 root.title('cadastro')
 root.config(bg='#8c8a89')
 root.config(pady=10, padx=10)
+root.resizable(width=False, height=False)
 fr1 = LabelFrame(root, padx=10, pady=10, bg='#8c8a89', fg='#660000', text='Dados Pessoais', font='Verdana 14 italic')
 fr2 = LabelFrame(root, padx=10, pady=10, bg='#8c8a89', fg='#660000', text='Endereço', font='Verdana 14 italic')
 fr3 = Frame(root, padx=10, pady=10, bg='#8c8a89')
@@ -33,12 +34,12 @@ en4_fr2 = Entry(fr2, font='Verdana 12 bold')
 en5_fr2 = Entry(fr2, font='Verdana 12 bold', width=6)
 
 # ########################## widgets frame 3 ########################## #
-bt1_fr3 = Button(fr3, text='Gravar Dados', font='Verdana 11')
-bt2_fr3 = Button(fr3, text='Listar Dados', font='Verdana 11')
+bt1_fr3 = Button(fr3, text='Gravar Dados', font='Verdana 11', relief='solid')
+bt2_fr3 = Button(fr3, text='Listar Dados', font='Verdana 11', relief='solid')
 
 # ########################### layout frames ########################### #
-fr1.pack(anchor=W)
-fr2.pack(anchor=W)
+fr1.pack(fill=BOTH, anchor=W)
+fr2.pack(fill=BOTH, anchor=W)
 fr3.pack(fill=BOTH, anchor=NE)
 
 # ####################### layout widgets frame 1 ####################### #
@@ -67,7 +68,7 @@ en5_fr2.grid(row=2, column=5)
 
 # ####################### layout widgets frame 3 ####################### #
 bt1_fr3.grid(row=0, column=0)
-bt2_fr3.grid(row=0, column=1)
+bt2_fr3.grid(row=0, column=1, padx=3)
 
 
 root.mainloop()
