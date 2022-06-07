@@ -9,13 +9,13 @@ fr3 = Frame(root, padx=10, pady=10)
 # ########################## widgets frame 1 ########################## #
 lb1_fr1 = Label(fr1, text="Dados Pessoais", font='Verdana 13 italic', anchor=W, fg='blue', pady=3)
 lb2_fr1 = Label(fr1, text='Nome:', font='Verdana 12', anchor=E, pady=3)
-lb3_fr1 = Label(fr1, text='Data Nasc:', font='Verdana 12', anchor=E, pady=3)
-lb4_fr1 = Label(fr1, text='CPF:', font='Verdana 12', anchor=E, pady=3)
-lb5_fr1 = Label(fr1, text='Telefone:', font='Verdana 12',  anchor=E, pady=3)
-en1_fr1 = Entry(fr1, font='Verdana 12 bold')
-en2_fr1 = Entry(fr1, font='Verdana 12 bold')
-en3_fr1 = Entry(fr1, font='Verdana 12 bold')
-en4_fr1 = Entry(fr1, font='Verdana 12 bold')
+lb3_fr1 = Label(fr1, text='CPF:', font='Verdana 12', anchor=E, pady=3)
+lb4_fr1 = Label(fr1, text='Telefone:', font='Verdana 12', anchor=E, pady=3)
+lb5_fr1 = Label(fr1, text='Data Nasc:', font='Verdana 12',  anchor=E, pady=3)
+en1_fr1 = Entry(fr1, font='Verdana 11')
+en2_fr1 = Entry(fr1, font='Verdana 11', width=15)
+en3_fr1 = Entry(fr1, font='Verdana 11', width=15)
+en4_fr1 = Entry(fr1, font='Verdana 11', width=13)
 
 # ########################## widgets frame 2 ########################## #
 lb1_fr2 = Label(fr2, text="Endereço", font='Verdana 13 italic', anchor=W, fg='blue', pady=3)
@@ -41,14 +41,14 @@ fr3.pack(fill=BOTH, anchor=NE)
 
 # ####################### layout widgets frame 1 ####################### #
 lb1_fr1.grid(row=0, column=0, columnspan=2, sticky=EW)
-lb2_fr1.grid(row=1, column=0, sticky=EW)
-lb3_fr1.grid(row=2, column=0, sticky=EW)
-lb4_fr1.grid(row=3, column=0, sticky=EW)
-lb5_fr1.grid(row=4, column=0, sticky=EW)
-en1_fr1.grid(row=1, column=1)
-en2_fr1.grid(row=2, column=1)
-en3_fr1.grid(row=3, column=1)
-en4_fr1.grid(row=4, column=1)
+lb2_fr1.grid(row=1, column=0, sticky=EW) # nome
+lb3_fr1.grid(row=2, column=0, sticky=EW) # cpf
+lb4_fr1.grid(row=2, column=2, sticky=EW) # telefone
+lb5_fr1.grid(row=2, column=4, sticky=EW)  # data nasc
+en1_fr1.grid(row=1, column=1, columnspan=5, sticky=EW) # nome
+en2_fr1.grid(row=2, column=1) # cpf
+en3_fr1.grid(row=2, column=3) # telefone
+en4_fr1.grid(row=2, column=5) # data nasc.
 
 # ####################### layout widgets frame 2 ####################### #
 lb1_fr2.grid(row=0, column=0, columnspan=2, sticky=EW)
