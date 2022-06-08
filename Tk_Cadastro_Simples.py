@@ -1,5 +1,25 @@
 from tkinter import *
 
+
+def format_cpf(event=None):
+    text = en2_fr1.get().replace(".", "").replace("-", "")[:11]
+    new_text = ""
+
+    if event.keysym.lower() == "backspace": return
+
+    for index in range(len(text)):
+
+        if not text[index] in "0123456789": continue
+        if index in [2, 5]:
+            new_text += text[index] + "."
+        elif index == 8:
+            new_text += text[index] + "-"
+        else:
+            new_text += text[index]
+
+    en2_fr1.delete(0, "end")
+    en2_fr1.insert(0, new_text)
+
 root = Tk()
 root.title('cadastro')
 root.config(bg='#8c8a89')
@@ -67,4 +87,5 @@ en5_fr2.grid(row=2, column=5)
 bt1_fr3.grid(row=0, column=0)
 bt2_fr3.grid(row=0, column=1, padx=3)
 
+en2_fr1.bind("<KeyRelease>", format_cpf)
 root.mainloop()
