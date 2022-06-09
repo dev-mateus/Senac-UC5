@@ -54,7 +54,7 @@ root = Tk()
 root.title('cadastro')
 root.config(bg='#8c8a89')
 root.config(pady=10, padx=10)
-root.geometry('730x270')
+root.geometry('730x300')
 root.resizable(width=False, height=False)
 # ############################## frames ############################### #
 fr0 = LabelFrame(root, padx=10, pady=10, bg='#8c8a89')
@@ -72,10 +72,14 @@ lb1_fr1 = Label(fr1, text='Nome:', font='Verdana 12', anchor=E, pady=3, bg='#8c8
 lb2_fr1 = Label(fr1, text='CPF:', font='Verdana 12', anchor=E, pady=3, bg='#8c8a89')
 lb3_fr1 = Label(fr1, text='Telefone:', font='Verdana 12', anchor=E, pady=3, bg='#8c8a89')
 lb4_fr1 = Label(fr1, text='Data Nasc:', font='Verdana 12',  anchor=E, pady=3, bg='#8c8a89')
+lb_5fr2 = Label(fr1, text='Sexo:', font='Verdana 12', anchor=E, pady=3, bg='#8c8a89')
 en1_fr1 = Entry(fr1, font='Verdana 11')
 en2_fr1 = Entry(fr1, font='Verdana 11', width=15)
 en3_fr1 = Entry(fr1, font='Verdana 11', width=15, validate='key', validatecommand=(fr1.register(valida_tel), '%P'))
 en4_fr1 = Entry(fr1, font='Verdana 11', width=13)
+rb1_fr1 = Checkbutton(fr1, text='Masculino', font='Verdana 12', anchor=W, pady=3, bg='#8c8a89', highlightbackground='#8c8a89', activebackground='#8c8a89')
+rb2_fr1 = Checkbutton(fr1, text='Feminino', font='Verdana 12', anchor=W, pady=3, bg='#8c8a89', highlightbackground='#8c8a89', activebackground='#8c8a89')
+Checkbutton()
 # ########################## widgets frame 2 ########################## #
 lb1_fr2 = Label(fr2, text='Rua:', font='Verdana 12', anchor=E, pady=3, bg='#8c8a89')
 lb2_fr2 = Label(fr2, text='N°:', font='Verdana 12', anchor=E, pady=3, bg='#8c8a89')
@@ -89,7 +93,7 @@ en4_fr2 = Entry(fr2, font='Verdana 12 bold')
 en5_fr2 = Entry(fr2, font='Verdana 12 bold', width=6)
 # ########################## widgets frame 3 ########################## #
 bt1_fr3 = Button(fr3, text='Gravar Dados', font='Verdana 11')
-bt2_fr3 = Button(fr3, text='Voltar', font='Verdana 11', command=lambda: [fr0.pack(anchor=CENTER), fr1.pack_forget(), fr2.pack_forget(), fr3.pack_forget()])
+bt2_fr3 = Button(fr3, text='Sair', font='Verdana 11', command=lambda: [fr0.pack(anchor=CENTER), fr1.pack_forget(), fr2.pack_forget(), fr3.pack_forget()])
 # ########################### layout frames ########################### #
 fr0.pack(anchor=CENTER)
 # ####################### layout widgets frame 0 ####################### #
@@ -103,11 +107,13 @@ lb1_fr1.grid(row=1, column=0, sticky=EW) # nome
 lb2_fr1.grid(row=2, column=0, sticky=EW) # cpf
 lb3_fr1.grid(row=2, column=2, sticky=EW) # telefone
 lb4_fr1.grid(row=2, column=4, sticky=EW)  # data nasc
+lb_5fr2.grid(row=3, column=0)
 en1_fr1.grid(row=1, column=1, columnspan=5, sticky=EW) # nome
 en2_fr1.grid(row=2, column=1) # cpf
 en3_fr1.grid(row=2, column=3) # telefone
 en4_fr1.grid(row=2, column=5) # data nasc.
-
+rb1_fr1.grid(row=3, column=1, sticky=EW)
+rb2_fr1.grid(row=3, column=2, sticky=EW)
 # ####################### layout widgets frame 2 ####################### #
 lb1_fr2.grid(row=1, column=0, sticky=EW)
 lb2_fr2.grid(row=1, column=4, sticky=EW)
@@ -123,6 +129,7 @@ en5_fr2.grid(row=2, column=5)
 bt1_fr3.grid(row=0, column=0)
 bt2_fr3.grid(row=0, column=1, padx=3)
 #str.istitle()
+teste = Entry
 en2_fr1.bind("<KeyRelease>", valida_cpf)
 en1_fr1.bind("<KeyRelease>", valida_nome)
 root.mainloop()
