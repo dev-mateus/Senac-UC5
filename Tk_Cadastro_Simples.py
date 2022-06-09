@@ -1,25 +1,6 @@
 from tkinter import *
 
 
-def valida_nome(event=None):
-    entrada = ''
-    nova_entrada = ''
-
-    if event.keysym.lower() == "backspace":
-        return
-
-    for i in range(len(entrada)):
-
-        if not entrada[i].isalpha():
-            continue
-        elif entrada[i].islower():
-            nova_entrada += entrada[i].upper()
-        else:
-            nova_entrada += entrada[i]
-
-    en1_fr1.insert(0, nova_entrada)
-
-
 def valida_cpf(event=None):
     entrada = en2_fr1.get().replace('.', '').replace('-', '')[:11]
     nova_entrada = ''
@@ -49,8 +30,8 @@ def valida_tel(entrada):
         return False
 
 
+# ############################## window ############################### #
 root = Tk()
-
 root.title('cadastro')
 root.config(bg='#8c8a89')
 root.config(pady=10, padx=10)
@@ -127,8 +108,6 @@ en5_fr2.grid(row=2, column=5)
 # ####################### layout widgets frame 3 ####################### #
 bt1_fr3.grid(row=0, column=0)
 bt2_fr3.grid(row=0, column=1, padx=3)
-#str.istitle()
-teste = Entry
+# ####################### bind ######################### #
 en2_fr1.bind("<KeyRelease>", valida_cpf)
-en1_fr1.bind("<KeyRelease>", valida_nome)
 root.mainloop()
