@@ -1,6 +1,7 @@
 from tkinter import *
 
 
+# ############################ valida_cpf ############################# #
 def valida_cpf(event=None):
     entrada = en2_fr1.get().replace('.', '').replace('-', '')[:11]
     nova_entrada = ''
