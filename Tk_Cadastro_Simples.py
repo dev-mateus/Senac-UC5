@@ -79,7 +79,7 @@ en3_fr1 = Entry(fr1, font='Verdana 11', width=15, validate='key', validatecomman
 en4_fr1 = Entry(fr1, font='Verdana 11', width=13)
 rb1_fr1 = Checkbutton(fr1, text='Masculino', font='Verdana 12', anchor=W, pady=3, bg='#8c8a89', highlightbackground='#8c8a89', activebackground='#8c8a89')
 rb2_fr1 = Checkbutton(fr1, text='Feminino', font='Verdana 12', anchor=W, pady=3, bg='#8c8a89', highlightbackground='#8c8a89', activebackground='#8c8a89')
-Checkbutton()
+
 # ########################## widgets frame 2 ########################## #
 lb1_fr2 = Label(fr2, text='Rua:', font='Verdana 12', anchor=E, pady=3, bg='#8c8a89')
 lb2_fr2 = Label(fr2, text='N°:', font='Verdana 12', anchor=E, pady=3, bg='#8c8a89')
