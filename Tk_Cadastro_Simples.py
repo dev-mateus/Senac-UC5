@@ -135,7 +135,6 @@ def consultar():
     mb1_fr7.grid(row=0, column=0)
 
 
-
 # ############################ voltar ############################# #
 def voltar():
     fr4.pack_forget()
